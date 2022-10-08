@@ -1,0 +1,56 @@
+body {
+  background-color: #000;
+}
+
+.clock{
+  position: absolute;
+  transform: scale(3.5);
+  border-radius: 50%;
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  color: #30c5ac;
+  top: 50%;
+  left: 50%;
+}
+
+.clock::after{
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  border-left: 1px solid #30c5ac;
+  content: '';
+  left: 14px;
+  border-radius: 1px;
+  top: 4px;
+  animation-duration: 1s;
+}
+
+.clock::before {
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  border-left: 1px solid #30c5ac;
+  content: '';
+  left: 14px;
+  border-radius: 1px;
+  top: 4px;
+  animation-duration: 20s;
+}
+
+.clock::before,.clock::after {
+  transform-origin: bottom;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
